@@ -1,5 +1,20 @@
 # Best-feature-decoding
-I worked with @mabdelhack to try and classify images seen by participants from their fMRI scans. We did this by correlating the top 1000 relevant features per layer (in Alex-net) to the features produced by preferred images.
+Supervised by @mabdelhack, I tried here to classify images seen by participants from their fMRI scans using a novel method and compared it to commonly used ML methods.
 
 # Data used
-We used the data featured in https://www.nature.com/articles/ncomms15037.pdf?fbclid=IwAR1wVvviuO3cQFhTeF-152W2_itsGyqhVgTAT3POGOQa8G6JRvcJ5ugqJT4, produced by the Kamitani lab.
+We used the data featured in https://www.nature.com/articles/ncomms15037.pdf?fbclid=IwAR1wVvviuO3cQFhTeF-152W2_itsGyqhVgTAT3POGOQa8G6JRvcJ5ugqJT4, produced by the Kamitani lab. 
+
+Data (and associated dataset info) can be found here: https://github.com/KamitaniLab/GenericObjectDecoding/tree/master/data
+
+# Files description
+
+> 1. Functions.ipynb: has all the custom functions used in the workflow. Could be used later to remove redundancy.
+> 2. bfd.ipynb: 
+  In this notebook, I tested the hypothesis of this project by performing the following steps:
+      a. Find the images intersecting between imagenet and the fMRI dataset, and use their data only.
+      b. Clean the data so that the preferred images features and the fMRI dataset features are present in the same order in different dataframes.
+      c. Correlate the features together (per subject, per layer, per roi).
+      d. Save the results (can be found at bfd.csv)
+  I then performed a following experiment on two other methods (logistic regression and SVM), using them to classify the images from feature data. Results can be found     plotted at others_avg.xlsx.
+      
+> 3. Logreg.ipynb: In this notebook, I first did a 7k cross validation to test 4 different methods on classifying the images using the feature data. Methods used were Logistic regression, SVM, random forest, and Gradient boosting. Thirty images were used for training and 5 for testing, and the mean score for each model across CV attempts was recorded. The output of this experiment is available in the model_scores.csv file. I then did some hyperparameter tuning using random search CV on multinomial logistic regression to classify the images using their feature data. The output of this experiment is available in the best_logreg2.csv file.
