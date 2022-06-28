@@ -11,6 +11,7 @@ Data (and associated dataset info) can be found here: https://github.com/Kamitan
 > 1. Functions.ipynb: has all the custom functions used in the workflow. Could be used later to remove redundancy.
 > 2. bfd.ipynb: 
   In this notebook, I tested the hypothesis of this project by performing the following steps:
+  
       a. Find the images intersecting between imagenet and the fMRI dataset, and use their data only.
       b. Clean the data so that the preferred images features and the fMRI dataset features are present in the same order in different dataframes.
       c. Correlate the features together (per subject, per layer, per roi).
