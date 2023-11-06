@@ -1,5 +1,5 @@
 # Best-feature-decoding
-Supervised by @mabdelhack, I atempted to classify fMRI data of seen images using a novel method and compared its performance to commonly used ML methods.
+Supervised by [@mabdelhack] (https://github.com/mabdelhack), I atempted to classify fMRI data of seen images using a novel method and compared its performance to commonly used ML methods.
 
 # Data used
 We used the data featured in https://www.nature.com/articles/ncomms15037.pdf?fbclid=IwAR1wVvviuO3cQFhTeF-152W2_itsGyqhVgTAT3POGOQa8G6JRvcJ5ugqJT4, produced by the Kamitani lab. 
